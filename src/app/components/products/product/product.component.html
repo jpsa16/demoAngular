@@ -1,0 +1,58 @@
+<div class="card mt-5">
+  <div class="card-body">
+      <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+          <!-- TO UPDATE -->
+          <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="productService.selectedProduct.$key">
+
+          <div class="form-group">
+            <input 
+              type="text"
+              class="form-control"
+              name="nombre"
+              #name="ngModel"
+              [(ngModel)]="productService.selectedProduct.nombre"
+              placeholder="nombre"
+              >
+          </div>
+          <div class="form-group">
+              <input 
+                type="text"
+                class="form-control"
+                name="apellido"
+                #category="ngModel"
+                [(ngModel)]="productService.selectedProduct.apellido"
+                placeholder="apellido"
+                >
+            </div>
+          <div class="form-group">
+            <input 
+              type="text"
+              class="form-control"
+              name="edad"
+              #location="ngModel"
+              [(ngModel)]="productService.selectedProduct.edad"
+              placeholder="edad"
+              >
+          </div>
+          <div class="form-group">
+            <input 
+              type="text"
+              class="form-control"
+              name="fechaNacimiento"
+              #location="ngModel"
+              [(ngModel)]="productService.selectedProduct.fechaNacimiento"
+              placeholder="Fecha de Naciomiento"
+              >
+          </div>
+
+          <div class="form-group">
+            <button class="btn btn-primary" type="submit">
+                <i class="fas fa-plus-circle"></i> agregar cliente
+            </button>
+            <button class="btn btn-secondary" type="reset" (click)="resetForm(productForm)">
+                <i class="fas fa-sync-alt"></i> Reset
+            </button>
+          </div>
+        </form>
+  </div>
+</div>
